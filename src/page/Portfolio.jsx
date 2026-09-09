@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Mail, Send, ArrowUpRight, X, ExternalLink, CheckCircle2 } from "lucide-react";
-import { FaGithub, FaInstagram, FaMicrophone, FaPhone, FaPhoneAlt } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaPhoneAlt } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
 const content = {
@@ -30,6 +30,7 @@ const content = {
     },
     projects: [
       {
+        id: "airo-x",
         year: "2025",
         title: "Airo X Travel Platformasi",
         desc: "Onlayn sayohat va bron qilish xizmati uchun zamonaviy hamda tez ishlaydigan interfeys. Savatcha va qulay qidiruv filtrlari integratsiya qilingan.",
@@ -73,6 +74,7 @@ const content = {
     },
     projects: [
       {
+        id: "airo-x",
         year: "2025",
         title: "Платформа Airo X Travel",
         desc: "Современный и быстрый фронтенд-интерфейс для онлайн-сервиса путешествий с удобной корзиной и фильтрами для поиска.",
@@ -111,6 +113,15 @@ export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState(null);
   const t = content[lang];
 
+  // Silliq siljish funksiyasi (Smooth Scroll)
+  const handleScrollTo = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#F7F8FB] text-[#10151F] antialiased selection:bg-[#3B5BDB] selection:text-white overflow-x-hidden">
       <style>{`
@@ -133,33 +144,31 @@ export default function Portfolio() {
           className="sticky top-0 z-50 border-b border-[#D7DEEC] bg-[#F7F8FB]/90 backdrop-blur-md"
         >
           <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-8 py-4 sm:py-5">
-            <a href="#top" className="font-display text-sm sm:text-lg font-bold tracking-tight hover:text-[#3B5BDB] transition-colors truncate max-w-[160px] sm:max-w-none">
+            <a href="#top" onClick={(e) => handleScrollTo(e, "top")} className="font-display text-sm sm:text-lg font-bold tracking-tight hover:text-[#3B5BDB] transition-colors truncate max-w-[160px] sm:max-w-none">
               Hatamov Abdulaziz
             </a>
             <nav className="flex items-center gap-3 sm:gap-7">
-              <a href="#about" className="font-mono-c text-[11px] sm:text-xs text-[#5C6474] hover:text-[#10151F] transition-colors hidden sm:inline-block">
+              <a href="#about" onClick={(e) => handleScrollTo(e, "about")} className="font-mono-c text-[11px] sm:text-xs text-[#5C6474] hover:text-[#10151F] transition-colors hidden sm:inline-block">
                 {t.nav.about}
               </a>
-              <a href="#projects" className="font-mono-c text-[11px] sm:text-xs text-[#5C6474] hover:text-[#10151F] transition-colors">
+              <a href="#projects" onClick={(e) => handleScrollTo(e, "projects")} className="font-mono-c text-[11px] sm:text-xs text-[#5C6474] hover:text-[#10151F] transition-colors">
                 {t.nav.projects}
               </a>
-              <a href="#contact" className="font-mono-c text-[11px] sm:text-xs text-[#5C6474] hover:text-[#10151F] transition-colors">
+              <a href="#contact" onClick={(e) => handleScrollTo(e, "contact")} className="font-mono-c text-[11px] sm:text-xs text-[#5C6474] hover:text-[#10151F] transition-colors">
                 {t.nav.contact}
               </a>
               <div className="flex items-center rounded-md border border-[#D7DEEC] bg-white p-0.5 sm:p-1 font-mono-c text-xs shadow-[2px_2px_0_0_#D7DEEC]">
                 <button
                   type="button"
                   onClick={() => setLang("uz")}
-                  className={`rounded px-2 sm:px-3 py-1 cursor-pointer transition-all text-[11px] sm:text-xs ${lang === "uz" ? "bg-black text-white" : "text-[#5C6474] hover:text-[#10151F]"
-                    }`}
+                  className={`rounded px-2 sm:px-3 py-1 cursor-pointer transition-all text-[11px] sm:text-xs ${lang === "uz" ? "bg-black text-white" : "text-[#5C6474] hover:text-[#10151F]"}`}
                 >
                   UZ
                 </button>
                 <button
                   type="button"
                   onClick={() => setLang("ru")}
-                  className={`rounded px-2 sm:px-3 py-1 cursor-pointer transition-all text-[11px] sm:text-xs ${lang === "ru" ? "bg-black text-white" : "text-[#5C6474] hover:text-[#10151F]"
-                    }`}
+                  className={`rounded px-2 sm:px-3 py-1 cursor-pointer transition-all text-[11px] sm:text-xs ${lang === "ru" ? "bg-black text-white" : "text-[#5C6474] hover:text-[#10151F]"}`}
                 >
                   RU
                 </button>
@@ -188,12 +197,14 @@ export default function Portfolio() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
                   href="#projects"
+                  onClick={(e) => handleScrollTo(e, "projects")}
                   className="rounded-md bg-[#10151F] px-6 py-3 text-center text-sm font-medium text-white transition-colors hover:bg-[#3B5BDB]"
                 >
                   {t.ctaPrimary}
                 </a>
                 <a
                   href="#contact"
+                  onClick={(e) => handleScrollTo(e, "contact")}
                   className="rounded-md border-2 border-[#10151F] px-6 py-3 text-center text-sm font-medium transition-colors hover:border-blue-500 hover:text-blue-500"
                 >
                   {t.ctaGhost}
@@ -257,6 +268,7 @@ export default function Portfolio() {
               {t.projects.map((p) => (
                 <motion.div
                   key={p.title}
+                  id={p.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -380,16 +392,16 @@ export default function Portfolio() {
                       <span className="text-white/40 group-hover:text-white/70 text-xs">abo.coder</span>
                     </a>
                   </li>
-               <li>
-                 
-                    <a href="tel:+998932135544"
+                  <li>
+                    <a
+                      href="tel:+998932135544"
                       rel="noopener noreferrer"
-                      className="group flex items-center justify-between py-2.5 text-white/70 hover:text-white transition-colors">
+                      className="group flex items-center justify-between py-2.5 text-white/70 hover:text-white transition-colors"
+                    >
                       <div className="flex items-center gap-2.5">
                         <FaPhoneAlt size={14} className="text-white/40 group-hover:text-[#3B5BDB]" />
                         <span>Tel: +998 93 213 55 44</span>
                       </div>
-                   
                     </a>
                   </li>
                 </ul>
@@ -402,7 +414,7 @@ export default function Portfolio() {
         <footer className="border-t border-[#D7DEEC]">
           <div className="mx-auto max-w-6xl px-4 sm:px-8 py-8 sm:py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="font-mono-c text-xs text-[#9099AC]">© 2026 Hatamov Abdulaziz.</p>
-            <a href="#top" className="font-mono-c text-xs text-[#9099AC] hover:text-[#10151F] transition-colors">
+            <a href="#top" onClick={(e) => handleScrollTo(e, "top")} className="font-mono-c text-xs text-[#9099AC] hover:text-[#10151F] transition-colors">
               back-to-top()
             </a>
           </div>
