@@ -386,7 +386,7 @@ export default function Portfolio() {
                   </li>
                   <li>
                     <a
-                      href="https://t.me/ab0_coder"
+                      href="https://t.me/abo_coder"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group flex items-center justify-between py-2.5 text-white/70 hover:text-white transition-colors"
@@ -395,7 +395,7 @@ export default function Portfolio() {
                         <Send size={14} className="text-white/40 group-hover:text-[#3B5BDB]" />
                         <span>Telegram</span>
                       </div>
-                      <span className="text-white/40 group-hover:text-white/70 text-xs">@abo.coder</span>
+                      <span className="text-white/40 group-hover:text-white/70 text-xs">@abo_coder</span>
                     </a>
                   </li>
                   <li>
