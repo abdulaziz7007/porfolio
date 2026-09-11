@@ -46,6 +46,23 @@ const content = {
         tags: ["React", "Tailwind CSS", "Redux"],
         link: "https://aairox.vercel.app/",
       },
+      {
+        id: "Market",
+        year: "2025",
+        title: "Market Platformasi",
+        desc: "Onlayn savdo va xarid qilish uchun zamonaviy hamda tez ishlaydigan interfeys. Savatcha va qulay qidiruv-filtrlash tizimi integratsiya qilingan.",
+        details:
+          "Market — foydalanuvchilarga minglab mahsulotlarni qulay tarzda topish, savatga qo'shish va buyurtma berish imkonini beruvchi platforma. Loyiha davomida to'liq responsive dizayn, uch tilli interfeys (o'zbek, rus, ingliz), Firebase orqali autentifikatsiya hamda Context API yordamida holatni boshqarish (State Management) amalga oshirildi.",
+        role: "Frontend Dasturchi (UI/UX integratsiyasi, komponentlar arxitekturasi)",
+        features: [
+          "Tezkor qidiruv va filtrlash tizimi",
+          "Savatcha va buyurtma berish jarayoni",
+          "Uch tilli interfeys (UZ / RU / EN)",
+          "Mobil qurilmalarga to'liq moslashgan (Responsive)",
+        ],
+        tags: ["TypeScript", "Tailwind CSS", "Context API", "React Router", "Firebase Auth", "Hooks"],
+        link: "https://dokon-demo.vercel.app",
+      }
     ],
   },
   ru: {
@@ -90,6 +107,23 @@ const content = {
         tags: ["React", "Tailwind CSS", "Redux"],
         link: "https://aairox.vercel.app/",
       },
+      {
+        id: "Market",
+        year: "2025",
+        title: "Платформа Market",
+        desc: "Современный и быстрый интерфейс для онлайн-торговли и покупок. Интегрированы корзина и удобная система поиска-фильтрации.",
+        details:
+          "Market — платформа, позволяющая пользователям удобно находить тысячи товаров, добавлять их в корзину и оформлять заказы. В ходе разработки реализованы полностью адаптивный дизайн, трёхъязычный интерфейс (узбекский, русский, английский), аутентификация через Firebase, а также управление состоянием (State Management) с помощью Context API.",
+        role: "Frontend-разработчик (интеграция UI/UX, архитектура компонентов)",
+        features: [
+          "Быстрый поиск и система фильтрации",
+          "Корзина и процесс оформления заказа",
+          "Трёхъязычный интерфейс (UZ / RU / EN)",
+          "Полностью адаптивный дизайн (Responsive)",
+        ],
+        tags: ["TypeScript", "Tailwind CSS", "Context API", "React Router", "Firebase Auth", "Hooks"],
+        link: "https://dokon-demo.vercel.app",
+      }
     ],
   },
 };
@@ -143,8 +177,8 @@ export default function Portfolio() {
           transition={{ duration: 0.5 }}
           className="sticky top-0 z-50 border-b border-[#D7DEEC] bg-[#F7F8FB]/90 backdrop-blur-md"
         >
-          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-8 py-4 sm:py-5">
-            <a href="#top" onClick={(e) => handleScrollTo(e, "top")} className="font-display text-sm sm:text-lg font-bold tracking-tight hover:text-[#3B5BDB] transition-colors truncate max-w-[160px] sm:max-w-none">
+          <div className="mx-auto  flex max-w-6xl items-center justify-between px-4 sm:px-8 py-4 sm:py-5">
+            <a href="#top" onClick={(e) => handleScrollTo(e, "top")} className="font-display text-sm sm:text-lg font-bold tracking-tight hover:text-[#3B5BDB] transition-colors truncate max-w-40 sm:max-w-none">
               Hatamov Abdulaziz
             </a>
             <nav className="flex items-center gap-3 sm:gap-7">
@@ -176,6 +210,7 @@ export default function Portfolio() {
             </nav>
           </div>
         </motion.header>
+
 
         {/* Hero */}
         <section id="top" className="border-b border-[#D7DEEC]">
@@ -310,6 +345,9 @@ export default function Portfolio() {
             </div>
           </div>
         </section>
+
+
+
 
         {/* Contact */}
         <section id="contact">
