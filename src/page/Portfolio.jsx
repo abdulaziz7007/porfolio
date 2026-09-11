@@ -157,7 +157,7 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F8FB] text-[#10151F] antialiased selection:bg-[#3B5BDB] selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#F7F8FB] text-[#10151F] antialiased selection:bg-[#3B5BDB] selection:text-white">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
         .font-display { font-family: 'Sora', sans-serif; }
@@ -175,9 +175,9 @@ export default function Portfolio() {
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="sticky top-0 z-50 border-b border-[#D7DEEC] bg-[#F7F8FB]/90 backdrop-blur-md"
+          className="fixed top-0 left-0 right-0 z-50 border-b border-[#D7DEEC] bg-[#F7F8FB]/90 backdrop-blur-md"
         >
-          <div className="mx-auto  flex max-w-6xl items-center justify-between px-4 sm:px-8 py-4 sm:py-5">
+          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-8 py-4 sm:py-5">
             <a href="#top" onClick={(e) => handleScrollTo(e, "top")} className="font-display text-sm sm:text-lg font-bold tracking-tight hover:text-[#3B5BDB] transition-colors truncate max-w-40 sm:max-w-none">
               Hatamov Abdulaziz
             </a>
@@ -211,9 +211,8 @@ export default function Portfolio() {
           </div>
         </motion.header>
 
-
         {/* Hero */}
-        <section id="top" className="border-b border-[#D7DEEC]">
+        <section id="top" className="border-b border-[#D7DEEC] pt-24 sm:pt-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-8 py-16 sm:py-28">
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
@@ -346,11 +345,8 @@ export default function Portfolio() {
           </div>
         </section>
 
-
-
-
         {/* Contact */}
-        <section id="contact">
+        <section id="contact" className="border-b border-[#D7DEEC]">
           <div className="mx-auto max-w-6xl px-4 sm:px-8 py-16 sm:py-20">
             <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] items-start">
               <div>
@@ -390,7 +386,7 @@ export default function Portfolio() {
                   </li>
                   <li>
                     <a
-                      href="https://t.me/uzb_codes"
+                      href="https://t.me/ab0_coder"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group flex items-center justify-between py-2.5 text-white/70 hover:text-white transition-colors"
@@ -399,7 +395,7 @@ export default function Portfolio() {
                         <Send size={14} className="text-white/40 group-hover:text-[#3B5BDB]" />
                         <span>Telegram</span>
                       </div>
-                      <span className="text-white/40 group-hover:text-white/70 text-xs">@uzb_codes</span>
+                      <span className="text-white/40 group-hover:text-white/70 text-xs">@abo.coder</span>
                     </a>
                   </li>
                   <li>
