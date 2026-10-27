@@ -89,7 +89,7 @@ export default function Contact({ t }) {
                 >
                   <div className="flex items-center gap-2.5">
                     <FaPhoneAlt size={14} className="text-white/40 group-hover:text-[#FFE600]" />
-                    <span>Tel: +998 93 213 55 44</span>
+                   <a href="tel:+998500200684">+998 50 020 06 84</a>
                   </div>
                 </a>
               </li>
