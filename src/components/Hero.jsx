@@ -1,51 +1,72 @@
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
-function Corners() {
-  const base = "absolute h-3 w-3 sm:h-4 sm:w-4 border-[#10151F]";
+export default function Hero({ t, handleScrollTo, ready = true }) {
   return (
-    <>
-      <span className={`${base} -left-px -top-px border-l-2 border-t-2`} />
-      <span className={`${base} -right-px -top-px border-r-2 border-t-2`} />
-      <span className={`${base} -left-px -bottom-px border-l-2 border-b-2`} />
-      <span className={`${base} -right-px -bottom-px border-r-2 border-b-2`} />
-    </>
-  );
-}
-
-export default function Hero({ t, handleScrollTo }) {
-  return (
-    <section id="top" className="border-b border-[#D7DEEC] pt-24 sm:pt-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-8 py-16 sm:py-28">
-        <motion.div
-          initial={{ scale: 0.95, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative border border-[#D7DEEC] bg-white/70 px-6 py-10 sm:px-12 sm:py-14"
-        >
-          <Corners />
-          <p className="font-mono-c mb-4 inline-block rounded bg-[#3B5BDB]/10 px-2.5 py-1 text-xs font-medium text-[#3B5BDB]">
-            {"<"}{t.kicker}{" />"}
-          </p>
-          <h1 className="font-display mb-6 max-w-[18ch] text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+    <section id="top" className="relative overflow-hidden bg-black text-white pt-24 sm:pt-28">
+      <div className="pointer-events-none absolute -right-32 top-10 h-[60vmin] w-[60vmin] rounded-full bg-[radial-gradient(circle,rgba(124,92,255,0.35),rgba(0,0,0,0)_70%)]" />
+      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-8 py-14 sm:py-24 md:grid-cols-[1.2fr_1fr]">
+        <div>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={ready ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+            className="font-mono-c mb-6 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white/60"
+          >
+            <span className="h-2 w-2 rounded-full bg-[#FFE600]" />
+            {t.kicker}
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={ready ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="font-display mb-8 text-4xl sm:text-6xl lg:text-7xl font-black leading-[1.02]"
+          >
             {t.heroTitle}
-          </h1>
-          <p className="mb-9 max-w-[48ch] text-base sm:text-lg text-[#5C6474] leading-relaxed">{t.heroText}</p>
-          <div className="flex flex-col sm:flex-row gap-3">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={ready ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mb-9 max-w-[52ch] text-base sm:text-lg text-white/60 leading-relaxed"
+          >
+            {t.heroText}
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={ready ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.45 }}
+            className="flex flex-col sm:flex-row gap-3"
+          >
             <a
               href="#projects"
               onClick={(e) => handleScrollTo(e, "projects")}
-              className="rounded-md bg-[#10151F] px-6 py-3 text-center text-sm font-medium text-white transition-colors hover:bg-[#3B5BDB]"
+              className="inline-flex items-center justify-center gap-1.5 rounded-full bg-white px-7 py-3.5 text-sm font-medium text-black transition-colors hover:bg-[#FFE600]"
             >
               {t.ctaPrimary}
+              <ArrowUpRight size={15} />
             </a>
             <a
               href="#contact"
               onClick={(e) => handleScrollTo(e, "contact")}
-              className="rounded-md border-2 border-[#10151F] px-6 py-3 text-center text-sm font-medium transition-colors hover:border-blue-500 hover:text-blue-500"
+              className="rounded-full border border-white/30 px-7 py-3.5 text-center text-sm font-medium transition-colors hover:bg-white hover:text-black"
             >
               {t.ctaGhost}
             </a>
-          </div>
+          </motion.div>
+        </div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={ready ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="relative mx-auto w-full max-w-sm overflow-hidden rounded-3xl border border-white/15 bg-white/5 aspect-[4/5]"
+        >
+          <img
+            src="/profile.jpg"
+            alt="Hatamov Abdulaziz"
+            className="h-full w-full object-cover"
+            onError={(e) => (e.currentTarget.style.display = "none")}
+          />
         </motion.div>
       </div>
     </section>
