@@ -42,12 +42,12 @@ export const content = {
         link: "https://aairox.vercel.app/",
       },
       {
-        id: "Uzum",
+        id: "Bozorcha",
         year: "2026",
-        title: "Uzum — Marketplace platformasi",
+        title: "Bozorcha — Marketplace platformasi",
         desc: "Onlayn savdo va xarid qilish uchun zamonaviy marketplace interfeysi. Mahsulotlar katalogi, qidiruv va savatcha tizimi integratsiya qilingan.",
         details:
-          "Uzum — foydalanuvchilarga minglab mahsulotlarni qulay tarzda topish, savatga qo'shish va buyurtma berish imkonini beruvchi marketplace loyihasi. Loyiha davomida to'liq responsiv dizayn, qulay navigatsiya va zamonaviy komponentlar arxitekturasi amalga oshirildi.",
+          "Bozorcha — foydalanuvchilarga minglab mahsulotlarni qulay tarzda topish, savatga qo'shish va buyurtma berish imkonini beruvchi marketplace loyihasi. Loyiha davomida to'liq responsiv dizayn, qulay navigatsiya va zamonaviy komponentlar arxitekturasi amalga oshirildi.",
         role: "Frontend dasturchi (UI/UX integratsiyasi, komponentlar arxitekturasi)",
         features: [
           "Tezkor qidiruv va filtrlash tizimi",
@@ -122,12 +122,12 @@ export const content = {
         link: "https://aairox.vercel.app/",
       },
       {
-        id: "Uzum",
+        id: "Bozorcha",
         year: "2026",
-        title: "Uzum — Маркетплейс",
+        title: "Bozorcha — Маркетплейс",
         desc: "Современный интерфейс маркетплейса для онлайн-торговли. Интегрированы каталог товаров, поиск и корзина.",
         details:
-          "Uzum — маркетплейс, позволяющий пользователям удобно находить тысячи товаров, добавлять их в корзину и оформлять заказы. В рамках проекта реализованы полностью адаптивный дизайн, удобная навигация и современная архитектура компонентов.",
+          "Bozorcha — маркетплейс, позволяющий пользователям удобно находить тысячи товаров, добавлять их в корзину и оформлять заказы. В рамках проекта реализованы полностью адаптивный дизайн, удобная навигация и современная архитектура компонентов.",
         role: "Frontend-разработчик (интеграция UI/UX, архитектура компонентов)",
         features: [
           "Быстрый поиск и система фильтрации",
